@@ -1,0 +1,54 @@
+{
+  "name": "multichannel-ad-campaign-skill",
+  "description": "AI-powered cross-channel ad campaign coordinator designed to generate ad copy variations, allocate budgets, and output production-ready ad manager payloads.",
+  "version": "1.0.0",
+  "author": "alphaparkinc",
+  "inputs": {
+    "campaign_goal": {
+      "type": "string",
+      "description": "The target goal of the marketing campaign (e.g. conversions, lead generation, brand awareness)."
+    },
+    "total_budget": {
+      "type": "number",
+      "description": "Total target budget in USD."
+    },
+    "product_details": {
+      "type": "object",
+      "description": "Details about the product to advertise.",
+      "properties": {
+        "name": { "type": "string" },
+        "url": { "type": "string" },
+        "selling_points": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "target_channels": {
+      "type": "array",
+      "description": "Target ad platforms to run campaigns on.",
+      "items": { "type": "string", "enum": ["meta", "google", "tiktok"] }
+    }
+  },
+  "outputs": {
+    "recommended_allocation": {
+      "type": "object",
+      "description": "Suggested budget split per target channel.",
+      "additionalProperties": { "type": "number" }
+    },
+    "ad_creatives": {
+      "type": "array",
+      "description": "Generated text copy and headlines grouped by channel and format.",
+      "items": {
+        "channel": { "type": "string" },
+        "format": { "type": "string" },
+        "headline": { "type": "string" },
+        "body_text": { "type": "string" },
+        "call_to_action": { "type": "string" }
+      }
+    },
+    "integration_payloads": {
+      "type": "object",
+      "description": "Production-ready API request payloads formatted for Meta/Google Ad Manager API creation.",
+      "additionalProperties": { "type": "object" }
+    }
+  },
+  "prompt": "You are an autonomous marketing director assistant. Your goal is to orchestrate campaigns across paid traffic channels by allocating budget dynamically and generating formatted ad creatives.\n\nGuideline Rules:\n1. Intelligent Allocation: Distribute {{total_budget}} among {{target_channels}} based on platform strengths (e.g., higher conversions allocation to Google Search, higher brand awareness/creative focus to TikTok).\n2. Platform Copywriting Formats: Adjust the tone and constraints for each channel:\n   - Meta: Needs engaging hooks and strong product benefit lists.\n   - Google: Must fit headline and description length rules (30 char headline, 90 char body).\n   - TikTok: Short, punchy hooks and trend-oriented copywriting.\n3. Output Integration Payloads: Structure JSON templates matching Meta Marketing API/Google Ads API format to facilitate direct automated deployment."
+}
