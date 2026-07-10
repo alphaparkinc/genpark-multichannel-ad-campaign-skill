@@ -1,4 +1,6 @@
-# Multichannel Ad Campaign Coordinator Skill
+# multichannel-ad-campaign-skill
+
+> **GenPark AI Agent Skill** -- # Multichannel Ad Campaign Coordinator Skill
 
 This repository contains the **Multichannel Ad Campaign Coordinator Skill** — an autonomous agent skill configuration (`skill.json`), developer SDK client (`campaign_coordinator.py`), and validation script for coordinating paid ad traffic. It is designed to automatically allocate budgets across platforms (Meta, Google, TikTok), generate platform-specific copy variations, and yield integration-ready API payloads.
 
