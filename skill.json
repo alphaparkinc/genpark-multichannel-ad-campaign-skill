@@ -1,5 +1,5 @@
 {
-  "name": "multichannel-ad-campaign-skill",
+  "name": "genpark-multichannel-ad-campaign-skill",
   "description": "GenPark AI Agent Skill - AI-powered cross-channel ad campaign coordinator designed to generate ad copy variations, allocate budgets, and output production-ready ad manager payloads.",
   "version": "1.0.0",
   "author": "genpark",
