@@ -1,4 +1,4 @@
-# multichannel-ad-campaign-skill
+# genpark-multichannel-ad-campaign-skill
 
 > **GenPark AI Agent Skill** -- # Multichannel Ad Campaign Coordinator Skill
 
